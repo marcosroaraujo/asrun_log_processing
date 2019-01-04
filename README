@@ -1,0 +1,33 @@
+# Aplicação para processamento de arquivo de log asrun
+
+Este repositório contém uma aplicação para processamento de arquivo de log asrun.
+
+# Funcionamento
+A cada vez que um arquivo .txt é adicionado na pasta monitored, um evento é disparado para processar o arquivo de log adicionado, extraindo informações relevantes. Em seguida grava as informações no banco de dados e envia uma requisão via método POST para a API http://localhost:5000/api/v1/cutmedia que é responsável por criar tarefa e realizar o corte da mídia.
+
+# Instalação
+
+## 1 - Clonar a aplicação
+```
+git clone git@github.com:marcosroaraujo/asrun_log_processing.git
+```
+
+## 2 - Crie um ambiente virtual
+```
+virtualenv env --python=python3
+```
+
+## 3 - Ative o ambiente
+```
+source env/bin/activate
+```
+
+## 4 - Instale as dependencias
+```
+pip install -r requirements.txt
+```
+
+## 5 - Execute o serviço
+```
+python watch_files.py
+```
